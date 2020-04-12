@@ -4,7 +4,7 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-kursrepo
 
@@ -12,7 +12,7 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-redovisa
 ---
@@ -21,8 +21,6 @@ Om
 
 Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/om.md`.
 
-Skriv några kloka ord om kursen?
+Mitt syfte med att gå den här kursen är att lära mig mer om objektorienterad programmering. Jag har tidigare bara skrapat på ytan kring detta tidigare. Att lära sig programmera PHP i ramverk ska bli intressant och... förmodligen svårt.
 
-Lägg till en fin och representativ bild för kursen, enligt ditt eget val.
-
-[FIGURE src=image/car.png?w=740&filter=grayscale&f1=colorize,0,30,0,0 caption="En fin bil som demobild, lite oklart hur den är representativ, men ändå..."]
+[FIGURE src=image/appelmust.jpg?w=300 caption="Vid en stor skörd brukar slutprodukten ibland bli äppelmust, om än inte så fint 'paketerad' som på bilden."]
