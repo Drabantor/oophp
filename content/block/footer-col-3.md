@@ -1,3 +1,7 @@
-#### Footer col 3
+#### Länkar till relevant information för kursen oophp
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+[PHP manual](https://www.php.net/)
+
+[PHP the right way](https://phptherightway.com/)
+
+[PHP Apprentice](https://phpapprentice.com/)
