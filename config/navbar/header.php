@@ -84,6 +84,11 @@ return [
             "title" => "Gissa numret",
         ],
         [
+            "text" => "Dice game",
+            "url" => "dice-game",
+            "title" => "tärningsspelet",
+        ],
+        [
             "text" => "Om",
             "url" => "om",
             "title" => "Om denna webbplats.",

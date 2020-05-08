@@ -1,4 +1,5 @@
 <?php
+
 namespace Drabantor\Guess;
 
 /**
@@ -6,9 +7,4 @@ namespace Drabantor\Guess;
  */
 class GuessException extends \Exception
 {
-    public function errorMessage()
-    {
-        $errorMessage = "Your guess must be an integer and in the range of 1-100!";
-        return $errorMessage;
-    }
 }

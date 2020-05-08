@@ -18,3 +18,13 @@
 html, body {
     background-color: #E6E7EB;
 }
+
+.dice-game-left {
+    width: 30%;
+}
+
+.dice-game-right {
+    border-left: 1px solid #ccc;
+    width: 70%;
+    padding-left: 2rem;
+}

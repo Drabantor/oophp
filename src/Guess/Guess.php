@@ -1,4 +1,5 @@
 <?php
+
 namespace Drabantor\Guess;
 
 /**
@@ -26,10 +27,10 @@ class Guess
 
     public function __construct(int $number = -1, int $tries = 6)
     {
+        $this->tries = $tries;
         if ($number == -1) {
             $number = rand(1, 100);
         }
-        $this->tries = $tries;
         $this->number = $number;
     }
 
@@ -81,25 +82,17 @@ class Guess
     //
     public function makeGuess(int $guess) : string
     {
-        try {
-            if ($guess < 0 || $guess > 100) {
-                throw new GuessException();
-            }
-        } catch (GuessException $e) {
-            echo("<pre>" . $e->errorMessage() . "</pre>");
-        }
+        $this->tries -= 1;
 
-        if ($guess === $this->number) {
+        if ($guess < 0 || $guess > 100) {
+            $res = "not in the range of 1-100!";
+        } elseif ($guess === $this->number) {
             $res = "CORRECT!";
-            $this->tries -= 1;
-            header("Location: /../../guess-game/index.md");
-            // destroySession();
+            $_SESSION["doCheat"] = null;
         } elseif ($guess > $this->number) {
             $res = "too high.";
-            $this->tries -= 1;
         } else {
             $res = "too low.";
-            $this->tries -= 1;
         }
         return $res;
     }

@@ -1,0 +1,113 @@
+/**
+ * Base style to affect HTML elements on a general scale.
+ */
+@bgColorHtml: #424242;
+@bgColorBody: #fff;
+@colorBody: #333;
+@baseFontSize: 100.01%;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;  // Always show scrollbar to avoid flickr
+    //background-color: @bgColorHtml;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: @colorBody;
+    //background-color: @bgColorBody;
+    #desinax-hgrid.font(@fontSizeBody);
+}
+
+//Egna ändringar - nedåt
+html, body {
+    background-color: #E8ECEF;
+}
+
+
+/**
+* Style a dice using UTF-8 characters.
+*/
+.dice-utf8 .dice-1::after { content: "\2680"; }
+.dice-utf8 .dice-2::after { content: "\2681"; }
+.dice-utf8 .dice-3::after { content: "\2682"; }
+.dice-utf8 .dice-4::after { content: "\2683"; }
+.dice-utf8 .dice-5::after { content: "\2684"; }
+.dice-utf8 .dice-6::after { content: "\2685"; }
+
+.dice-utf8 {
+font-size: 32px;
+}
+
+/**
+ * CSS sprite for a dice with six faces.
+ */
+.dice-sprite {
+    display: inline-block;
+    padding: 0;
+    margin: 0 4px 0 0;
+    width: 32px;
+    height: 32px;
+    background: url(dice-faces.jpg) no-repeat;
+}
+
+.dice-sprite.dice-1 { background-position: -160px 0; }
+.dice-sprite.dice-2 { background-position: -128px 0; }
+.dice-sprite.dice-3 { background-position: -96px 0; }
+.dice-sprite.dice-4 { background-position: -64px 0; }
+.dice-sprite.dice-5 { background-position: -32px 0; }
+.dice-sprite.dice-6 { background-position: 0 0; }
+
+
+.die-symbol {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.dice-game-left {
+    width: 30%;
+    height: 20em;
+    float:left;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.throw-div {
+	justify-content: flex-start;
+	display: inline-flex;
+}
+
+.dice-game-right {
+    border: 1px solid #ccc;
+    width: 70%;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    float: left;
+    height: 20em;
+}
+
+input {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+//Egna ändringar - uppåt
+
+
+
+
+// Affects all basic typographic elements
+#desinax-hgrid.activateDefaultTypography();
+
+// Responsive images
+img {
+    max-width: 100%;
+}
