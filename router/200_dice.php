@@ -6,7 +6,7 @@
  //debugging
 // var_dump(array_keys(get_defined_vars()));
 
-require("../src/Dice/Dicefunctions.php");
+require("../src/Dice1/Dicefunctions.php");
 
 /**
  * Init and redirect to play the game.
@@ -40,14 +40,14 @@ $app->router->post("dice/init", function () use ($app) {
 $app->router->get("dice/play", function () use ($app) {
 
     // Create a new Dice object.
-    $game = new Drabantor\Dice\Dice();
+    $game = new Drabantor\Dice1\DiceDice();
 
     // Inject some data from the session into the Dice object.
 
     // Current player
     $currentPlayer = $_SESSION["condition"]["current-player"];
     if ($currentPlayer != null) {
-        $game->setPlayer(new Drabantor\Dice\Player($currentPlayer));
+        $game->setPlayer(new Drabantor\Dice1\Player($currentPlayer));
     }
 
     // The total result for the current player.
@@ -100,7 +100,7 @@ $app->router->get("dice/play", function () use ($app) {
                 $message = changePlayer($playerName . " kastade en etta");
         }
     } else if ($_SESSION["condition"]["current-player"] == "computer") {
-        // Simulate the computers throws.
+            // Simulate the computers throws.
             $message = simulateComputer($game);
         if ($message == "win") {
                 $app->response->redirect("dice/result");

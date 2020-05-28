@@ -15,14 +15,14 @@ namespace Anax\View;
 <p><?= $computerName ?>s poäng: <?= $computerPoints ?? 0 ?></p>
 
 </div>
-    <div class="dice-game-right">
+    <div class="dice-game-right1">
         <?php if ($currentAcc) : ?>
             <?php
                 $player = $_SESSION["condition"][$currentPlayer . "-name"];
             ?>
 
             <h5><?= $player ?>s kast</h5>
-            <div class="throw-div">
+            <div class="throw-div1">
                 <?php foreach ($currentAcc as $i => $arr) : ?>
                     <div style="width: 5em;">
                         <h5>Kast <?= $i + 1 ?></h5>
@@ -44,7 +44,7 @@ namespace Anax\View;
             ?>
 
             <h4><?= $player ?>s kast</h4>
-            <div class="throw-div">
+            <div class="throw-div1">
                 <?php foreach ($previousAcc as $i => $arr) : ?>
                     <div  style="width: 5em;">
                         <h5>Kast <?= $i + 1 ?></h5>

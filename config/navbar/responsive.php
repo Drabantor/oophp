@@ -90,6 +90,11 @@ return [
             "title" => "tärningsspelet",
         ],
         [
+            "text" => "Dice game 2",
+            "url" => "dice-game",
+            "title" => "tärningsspelet 2",
+        ],
+        [
             "text" => "Om",
             "url" => "om",
             "title" => "Om denna webbplats.",

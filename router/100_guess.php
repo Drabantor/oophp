@@ -8,7 +8,7 @@
  */
 $app->router->get("guess/init", function () use ($app) {
     // Init the game session for the game to start
-    $game =new Drabantor\Guess\Guess();
+    $game = new Drabantor\Guess\Guess();
     $_SESSION["number"] = $game->number();
     $_SESSION["tries"] = $game->tries();
 

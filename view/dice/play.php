@@ -14,7 +14,7 @@ namespace Anax\View;
 <h1>Tärningspelet Kasta gris</h1>
 
 <div style="height: 10em"; class="dice-game" >
-<div "class="dice-game-left">
+<div "class="dice-game-left1">
 
     <?php if ($message) : ?>
         <p><?= $message ?></p>

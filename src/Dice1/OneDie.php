@@ -1,6 +1,6 @@
 <?php
 
-namespace Drabantor\Dice;
+namespace Drabantor\Dice1;
 
 class OneDie
 {

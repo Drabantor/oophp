@@ -2,80 +2,31 @@
 
 namespace Drabantor\Dice;
 
+/**
+ * A class that deict a dice with a given number of sides
+ */
 class Dice
 {
-    /**
-     * Get the name of the current player.
-     *
-     * @return string  Name of the current player.
-     */
-    public function getPlayerName() : string
+    private $rolls;
+    private $sides;
+
+    public function __construct(int $noOfDiceSides = 6)
     {
-        return $this->currentPlayer->getName();
+        $this -> rolls = [];
+        $this -> sides = $noOfDiceSides;
     }
 
-    /**
-     * Set the player property.
-     *
-     * @return void
-     */
-    public function setPlayer(Player $player)
+    public function roll()
     {
-        $this->currentPlayer = $player;
+        $roll = rand(1, $this -> sides);
+        array_push($this -> rolls, $roll);
+        return $roll;
     }
 
-    /**
-     * Get the current player
-     *
-     * @return Player Get object
-     */
-    public function getPlayer()
+    public function getLastRoll()
     {
-        return $this->currentPlayer;
-    }
-
-    /**
-     * Check the dice if it has value 1
-     *
-     * @return void
-     */
-    public function checkDiceIfOne()
-    {
-        if (in_array(1, $this->currentPlayer->getResult())) {
-            return true;
-        }
-    }
-
-
-    /**
-     * Decide who start the game.
-     *
-     * @return void
-     */
-    public function decideWhoStart()
-    {
-        $oneDie = new OneDie(6);
-
-        $youThrow = 0;
-        $aiThrow = 0;
-
-        while ($youThrow == $aiThrow) {
-            $youThrow = $oneDie->roll();
-
-            $aiThrow = $oneDie->roll();
-
-            $result = [$youThrow, $aiThrow];
-
-            if ($youThrow > $aiThrow) {
-                $this->setPlayer(new Player("human"));
-                break;
-            }
-
-            if ($youThrow < $aiThrow) {
-                $this->setPlayer(new Player("computer"));
-                break;
-            }
-        }
-        return $result;
+        $roll = end($this -> rolls);
+        reset($this -> rolls);
+        return $roll;
     }
 }

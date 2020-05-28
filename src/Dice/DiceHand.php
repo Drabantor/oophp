@@ -2,51 +2,39 @@
 
 namespace Drabantor\Dice;
 
+/**
+ * Showing off a standard class with methods and properties.
+ */
 class DiceHand
 {
-    /**
-     * @var int  $outcome  Array of last roll of the dice.
-     * @var OneDie $dice   Array of dices.
-     */
-    private $dice;
-    private $outcome;
+    private $dices = [];
+    private $roll = [];
 
-   /**
-     * Constructor for dicehand with a specific number of dices
-     *
-     * @param int $dice Number of dices. Two is default
-     */
-    public function __construct(int $dice = 2)
+
+    public function __construct(int $count = 5)
     {
-        $this->dice  = [];
-        $this->outcome = [];
-
-        for ($i = 0; $i < $dice; $i++) {
-            $this->dice[]  = new OneDie(6);
+        for ($i = 0; $i < $count; $i++) {
+            array_push($this -> dices, new Dice());
         }
     }
 
-    /**
-     * Get the outcome of the throw
-     *
-     * @return array $outcome
-     */
-    public function getOutcome() : array
+    public function roll()
     {
-        $outcome = $this->outcome;
-
-        return $outcome;
+        $nbrOfDices = count($this -> dices);
+        $this -> roll = [];
+        for ($i = 0; $i < $nbrOfDices; $i++) {
+            array_push($this -> roll, $this -> dices[$i] -> roll());
+        }
+        return $this -> roll;
     }
 
-    /**
-     * Throw all the dices
-     *
-     * @return void.
-     */
-    public function throwDices()
+    public function values()
     {
-        foreach ($this->dice as $d) {
-            $this->outcome[] = $d->roll();
-        }
+        return $this -> roll;
+    }
+
+    public function sum()
+    {
+        return array_sum($this -> roll);
     }
 }
